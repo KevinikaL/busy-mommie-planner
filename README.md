@@ -109,3 +109,22 @@ The main interaction is adding a task. A visitor enters the task information and
 - Netlify
 
 ![Busy Mommie Planner Wireframe](wireframe.png)
+
+
+## Team
+
+We are a pod building our own apps.
+
+### Pod Members
+
+- Miaya Dennis — World Cultures
+- Cindy Hulitsky — Dinosaurs
+- Gbenga — Health Monitor
+- Anastasia Ketchersid — Family Fun Planner
+- Kevinika — Busy Mommie Planner
+
+### Shared Pod Document
+
+[Our Pod Capstone Plan]
+
+(https://docs.google.com/document/d/1pAHUoA0O_Pil3cmCH792l70D3B6yPkERFIBjfPNTCwY/edit?tab=t.0)
