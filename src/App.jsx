@@ -19,8 +19,9 @@ function App() {
 
       {data.length === 0 ? (
         <p>No tasks scheduled.</p>
-      ) : (
-        data.map((item) => (
+      ) : 
+         (data.filter((item) => item.task).map((item) => (
+
           <div key={item.id}>
             <h3>{item.task}</h3>
             <p>Time: {item.times}</p>
