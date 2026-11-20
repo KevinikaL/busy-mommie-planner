@@ -1,0 +1,186 @@
+
+/* Main page */
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f3fc;
+  font-family: Arial, sans-serif;
+  color: #463857;
+}
+.welcome-screen, main {
+  min-height: 100vh;
+  padding: 40px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    url("https://images.pexels.com/photos/18354571/pexels-photo-18354571.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Main container */
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #74549b;
+}
+
+/* Add Task form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #f5edfa;
+  border-radius: 10px;
+}
+
+/* Inputs and dropdowns */
+input, select {
+  flex: 1;
+  min-width: 130px;
+  padding: 10px;
+  border: 1px solid #d4bce6;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  background-color: #b58bd2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #74549b;
+}
+
+/* Schedule table */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #d4bce6;
+  text-align: left;
+}
+
+th {
+  background-color: #e8d9f5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f3fc;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+}
+/* Colors for different task categories */
+.Family {
+  background-color: #f8c8dc;
+}
+
+.School {
+  background-color: #c8ddfa;
+}
+
+.Household {
+  background-color: #d4edc9;
+}
+
+.Personal {
+  background-color: #eeb2dc;
+}
+
+.Errands {
+  background-color: #ffe0b2;
+}
+
+/* Style category labels */
+.Family, .School, .Household, .Personal, .Errands {
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Make the Delete button smaller inside the schedule */
+td button {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+/* Make event names bold in the schedule */
+td:nth-child(3) p {
+  font-weight: bold;
+}
+
+/* Center everything on the Welcome Page */
+.welcome-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center welcome text and button */
+.welcome-content {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Space out welcome headings and message */
+.welcome-content h1,
+.welcome-content h2,
+.welcome-content p {
+  margin-bottom: 20px;
+}
+/* Style the Welcome Page title */
+.welcome-content h1 {
+  font-family:cursive;
+  font-size: 48px;
+  font-weight: bold;
+}
+/* Style the My Family Schedule heading */
+main h2 {
+  background-color: rgba(220, 194, 244, 0.8);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: #74549b;
+}
