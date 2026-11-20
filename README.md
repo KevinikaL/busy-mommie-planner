@@ -42,11 +42,15 @@ The application will have two main pages:
 
 ### Schedule Page
 
-- App title
-- Family schedule
-- Time, Day, Category, Event, and Name columns
+ - App title and family schedule heading
 - Form to add new tasks
-- Button to delete tasks
+- Dropdown to select a day of the week
+- 24-hour schedule from 12:00 AM to 11:00 PM
+- Time, Category, Event, and Name columns
+- Category colors to help organize tasks
+- Delete buttons for scheduled tasks
+- Home button to return to the Welcome Page
+
 
 ![Busy Mommie Planner Wireframe](wireframe.png)
 
@@ -56,11 +60,13 @@ The application will have two main pages:
 
 | Column | Type | Example Value |
 |---|---|---|
+| id | Automatically generated | 1 |
 | times | text | 8:00 AM |
 | days | text | Monday |
 | category | text | School |
 | task | text | Drop off |
 | names | text | Mom |
+| created_at | Automatically generated | Timestamp |
 
 Supabase automatically creates the `id` and `created_at` columns.
 
@@ -76,15 +82,37 @@ Supabase automatically creates the `id` and `created_at` columns.
 
 **The visitor:** Selects a day, enters a time, category, task, and name, then clicks Add Task.
 
-**The app:** Saves the task in Supabase, retrieves the updated list, and uses `map()` to display the scheduled tasks.
+**The app:** Uses React components and state to manage the selected day and switch between the Welcome Page and Schedule Page.
 
-**The visitor sees:** The new task appear in the family schedule.
+The `useTable` hook retrieves data from the `weekly_daily_planner` table in Supabase.
+
+The app uses `filter()` to find tasks that match the selected day and hour. It uses `map()` to display all 24 hours and the matching tasks in the schedule.
+
+When a visitor adds a task, Supabase saves the new record and the app reloads the task list.
+
+When a visitor deletes a task, Supabase removes the selected record using its unique ID.
+
+
+**The visitor sees:** Their scheduled events displayed in the correct hourly rows, with category colors and assigned family members.
 
 **While loading:** The app displays "Loading schedule..."
 
 **If nothing matches:** The app displays "No tasks scheduled."
 
 **If it fails:** The app displays "Unable to load or save tasks. Please try again."
+
+## What Changed Since Week 7
+
+Since Week 7, I completed the Add Task and Delete Task features using Supabase.
+
+I redesigned the schedule to display all 24 hours of a selected day. I added a dropdown for choosing the day and another dropdown for selecting the task's time.
+
+I used `filter()` and `map()` to organize the scheduled tasks and display them in the correct hourly rows.
+
+I also added category colors, a welcome screen, a background image, and buttons to move between the Welcome Page and Schedule Page.
+
+These changes made the application easier to use and helped me practice the React and JavaScript concepts I learned in class.
+
 
 ## Reflection
 
@@ -107,8 +135,6 @@ The main interaction is adding a task. A visitor enters the task information and
 - CSS
 - GitHub
 - Netlify
-
-![Busy Mommie Planner Wireframe](wireframe.png)
 
 
 ## Team
