@@ -15,6 +15,9 @@ function App() {
    // Use state to switch between the welcome screen and planner.
   const [showPlanner, setShowPlanner] = useState(false)
 
+  // Remember whether the All Tasks screen is open.
+  const [showAllTasks, setShowAllTasks] = useState(false)
+
   // Store all 24 hours in an array to display the daily schedule.
    const hours = [
   '12:00 AM', '1:00 AM', '2:00 AM', '3:00 AM',
@@ -98,7 +101,8 @@ function App() {
           </button>
         </div>
       </div>
-    ) : (
+
+    ) : !showAllTasks ? (
       <main>
         
       <h1>Busy Mommie Planner</h1>
@@ -225,12 +229,43 @@ function App() {
     </tbody>
   </table>
 </div>
+
+     {/* Open the All Tasks screen */}
+     <button onClick={() => setShowAllTasks(true)}> View All Tasks</button>
+
       {/* Return to the Welcome Page */}
-     <button onClick={() => setShowPlanner(false)}> Home</button>
+     <button onClick={() => setShowPlanner(false)}> Home</button> 
+
     </main>
-  )}
+    ) : (
+      <main>
+        <h1>All Family Tasks</h1>
+        <p>View every scheduled family task.</p>
+
+        {/* Display all tasks saved in Supabase */}
+        {data.length === 0 ? (
+          <p>No tasks scheduled.</p>
+        ) : (
+          data.map((item) => (
+            <div key={item.id}>
+              <h3>{item.task}</h3>
+              <p>Time: {item.times}</p>
+              <p>Day: {item.days}</p>
+              <p>Category: {item.category}</p>
+              <p>Name: {item.names}</p>
+            </div>
+          ))
+        )}
+
+        {/* Return to the daily planner */}
+        <button onClick={() => setShowAllTasks(false)}>
+          Back to Planner
+        </button>
+      </main>
+    )}
   </>
-  )
+)
+
     
 }
 
